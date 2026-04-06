@@ -28,13 +28,13 @@ export default function Cupcake({ isLit }) {
       {/* Base Pirottino - Giallo ocra */}
       <mesh position={[0, 0, 0]} castShadow>
         <cylinderGeometry args={[0.5, 0.4, 0.6, 32]} />
-        <meshStandardMaterial color="#fdd835" roughness={0.8} />
+        <meshStandardMaterial color="#643006" roughness={0.8} />
       </mesh>
 
       {/* Muffin (La pasta) - Vaniglia/Biscotto */}
       <mesh position={[0, 0.4, 0]} castShadow>
         <sphereGeometry args={[0.6, 32, 32]} />
-        <meshStandardMaterial color="#ffe082" roughness={0.6} />
+        <meshStandardMaterial color="#e8b10c" roughness={0.6} />
       </mesh>
 
       {/* Glassa (Top) - Rosa Fragola Pastello */}
@@ -46,7 +46,7 @@ export default function Cupcake({ isLit }) {
       {/* Candela - Oro bianco */}
       <mesh position={[0, 1.1, 0]} castShadow>
         <cylinderGeometry args={[0.04, 0.04, 0.7, 16]} />
-        <meshStandardMaterial color="#fffde7" metalness={0.3} />
+        <meshStandardMaterial color="#b53cf1" metalness={0.3} />
       </mesh>
 
       {/* LA FIAMMA */}
@@ -66,8 +66,8 @@ export default function Cupcake({ isLit }) {
             <mesh>
               <coneGeometry args={[0.12, 0.3, 16]} />
               <MeshDistortMaterial
-                color="#ffeb3b"
-                emissive="#ff9800"
+                color="#5aad0c"
+                emissive="#e75004"
                 emissiveIntensity={1.5}
                 distort={0.4}
                 speed={4}

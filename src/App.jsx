@@ -40,7 +40,7 @@ function App() {
         {ISCANDLELIT ? (
           /* NOME E CONTROLLI UNITI SOTTO MERY */
           <div className="ACTION-AREA">
-            <h1 className="NAME-HEADER">MERY.</h1>
+            <h1 className="NAME-HEADER">MERY</h1>
             <p className="HINT">
               {isListening ? "FORZA, SOFFIA!" : "ESPRIMI UN DESIDERIO"}
             </p>
@@ -71,7 +71,7 @@ function App() {
             >
               IL TUO DESIDERIO È IN VIAGGIO
             </p>
-            <h1 className="NAME-FOOTER">MERY</h1>
+            <h1 className="NAME-FOOTER">MERUJJJ</h1>
           </div>
         )}
       </div>

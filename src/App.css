@@ -2,18 +2,62 @@
 
 .BIRTHDAY-APP {
   height: 100vh;
-  width: 100vw;
-  background-color: #fffdf0;
+  /* Gradiente animato con i toni del giallo e crema */
+  background:
+    radial-gradient(at 0% 0%, rgba(255, 235, 59, 0.8) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 154, 162, 0.7) 0, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 126, 95, 0.8) 0, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(255, 193, 7, 0.7) 0, transparent 50%),
+    linear-gradient(135deg, #ffefba 0%, #fffdf0 100%);
+  background-size: 200% 200%;
+  animation: GRADIENT-ANIMATION 12s ease infinite;
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
   font-family: sans-serif;
 }
 
+/* Animazione per rendere lo sfondo dinamico */
+@keyframes GRADIENT-ANIMATION {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Aggiungiamo un tocco di "profondità" con delle sfere sfocate in CSS */
+.BIRTHDAY-APP::before,
+.BIRTHDAY-APP::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.15); /* Giallo oro trasparente */
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.BIRTHDAY-APP::before {
+  top: -100px;
+  left: -100px;
+}
+
+.BIRTHDAY-APP::after {
+  bottom: -100px;
+  right: -100px;
+}
+
 .BACKGROUND-3D {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 1; /* Il 3D sta sopra le sfere sfocate ma sotto la UI */
 }
 
 .UI-LAYER {
