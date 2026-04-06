@@ -1,0 +1,17 @@
+:root {
+  /* 60% - Sfondo Principale (Pastello chiarissimo) */
+  --bg: #fffdf0; 
+  /* 30% - Elementi di contrasto (Giallo crema saturo) */
+  --surface: #fff59d;
+  /* Testo: un oro scuro/marrone dorato per non usare il nero */
+  --text: #827717; 
+  --text-h: #5d4e00; 
+
+  /* 10% - Accento (Giallo limone brillante) */
+  --accent: #ffee58;
+  --accent-glow: rgba(255, 238, 88, 0.4);
+  --border: #f0e68c;
+
+  --sans: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}

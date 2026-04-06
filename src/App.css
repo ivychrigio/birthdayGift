@@ -1,0 +1,177 @@
+/* APP.CSS */
+
+.BIRTHDAY-APP {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fffdf0;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+
+.BACKGROUND-3D {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.UI-LAYER {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10vh; /* Spazio iniziale dall'alto */
+}
+
+.ACTION-AREA,
+.CONGRATS-CARD,
+.MAIN-BTN {
+  pointer-events: auto;
+}
+
+/* --- GRUPPO HEADER + AZIONE --- */
+.ACTION-AREA {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+}
+
+.NAME-HEADER {
+  font-size: clamp(2.8rem, 12vw, 5.5rem);
+  font-weight: 900;
+  color: #333;
+  margin: 0 0 1rem 0;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.HINT {
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.MAIN-BTN {
+  background: #ffd700;
+  border: 3px solid #333;
+  padding: 1rem 2.2rem;
+  border-radius: 50px;
+  color: #333;
+  font-weight: 900;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 0px #333;
+  transition: all 0.1s ease;
+  white-space: nowrap;
+}
+
+.MAIN-BTN:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0px #333;
+}
+
+/* --- CARD FINALE --- */
+.CONGRATS-CARD {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 3px solid #ffd700;
+  padding: 2.5rem 1.5rem;
+  border-radius: 40px;
+  width: 85%;
+  max-width: 340px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  animation: CARDAPPEAR 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes CARDAPPEAR {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.WISH-TITLE {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+  font-weight: 900;
+}
+.NAME-FOOTER {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffd700;
+}
+
+/* --- MEDIA QUERIES PER CELLULARE --- */
+
+/* Smartphone molto piccoli o con schermo basso (es. iPhone SE) */
+@media (max-height: 670px) {
+  .UI-LAYER {
+    padding-top: 5vh;
+  }
+  .NAME-HEADER {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .HINT {
+    margin-bottom: 1rem;
+  }
+  .MAIN-BTN {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.9rem;
+  }
+  .CONGRATS-CARD {
+    padding: 1.5rem;
+    border-radius: 30px;
+  }
+  .WISH-TITLE {
+    font-size: 1.4rem;
+  }
+  .NAME-FOOTER {
+    font-size: 2.2rem;
+  }
+}
+
+/* Fix per orientamento orizzontale (Landscape) */
+@media (max-height: 450px) and (orientation: landscape) {
+  .UI-LAYER {
+    padding-top: 2vh;
+  }
+  .NAME-HEADER {
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+  }
+  .HINT {
+    display: none;
+  } /* Nasconde il suggerimento per salvare spazio */
+  .MAIN-BTN {
+    padding: 0.6rem 1.5rem;
+  }
+  .CONGRATS-CARD {
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem;
+  }
+}
